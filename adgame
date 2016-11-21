@@ -1,0 +1,38 @@
+document.getElementById('option1').innerHTML = 'Dit is keuze 1';
+document.getElementById('level_title').innerHTML = 'Start het spel';
+
+var HasKey = false;
+
+
+function level1() {
+	console.log("level1()");
+
+	var opt1 = document.getElementById('option1');
+	opt1.innerHTML = 'level 1: optie 1';
+	opt1.setAttribute("onClick", "javascript:Level2();");
+
+	document.getElementById('level_title').innerHTML = 'level 1';
+	document.getElementById('level_image').src = 'img/level1.jpg';
+	
+
+	var opt2 = document.getElementById('option2');
+	opt2.innerHTML = 'level 1: optie 1';
+	opt2.onclick = function(){
+		if(HasKey){
+			Level2();
+		} else {
+			alert('U dont haz key dumbass');
+		}
+	}
+
+
+function Level2() {
+	console.log("Level2()");
+
+	var opt1 = document.getElementById('option1');
+	opt1.innerHTML = 'Level 2: optie 1';
+	opt1.onClick = 'javascript:Level3();';
+
+	document.getElementById('level_title').innerHTML = 'Level 2';
+	document.getElementById('level_image').src = 'img/afb2.jpg';
+}
